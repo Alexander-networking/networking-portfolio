@@ -1,10 +1,11 @@
 # Progress Tracker
 
 ## NetAcad Foundations
-- [ ] Packet Tracer Basics
-- [ ] Networking Essentials
+
+* \[X] Packet Tracer Basics
+
 
 
 ## CCNA Study Modules
 
-- [ ] Module 1 (placeholder)
+* \[ ] Module 1 (placeholder)
