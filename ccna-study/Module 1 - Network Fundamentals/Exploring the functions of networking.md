@@ -15,10 +15,19 @@
 - Ethernet links mainly used for within LAN network whereas Serial links are how we connect our LANS to a WAN wide area network
 - Users who wish to connect their networks to the internet need to connect through a service provider's access network some ways this is done is using different technologies such as dialup or a broadbands telephony network such as ADSL networks, cable networks, mobile, radio or fiber-optic networks
 - Small networks usually have fewer than 10 devices, medium to large networks consisting of tens to hundreds of devices and very large global networks such as the internet which connects thousands of devices across the world
--Medium to large enterprise networks can span multiple locations, Usually they have a main office or an enterprice campus which holds most of the coporate resources and remote sites such as branch offices or home offices SOHO which use the internet to connect back to the main office.
+-Medium to large enterprise networks can span multiple locations, Usually they have a main office or an enterprice campus which holds most of the coporate resources and remote sites such as branch offices or home offices SOHO which use the internet or WAN (serial links) to connect back to the main office.
 -Branch and home offices usually have their own LAN networks with their own servers but mainly rely on the branch office's resources hence the network connection
 
 
 ![Cisco Enterprise Architecture Model](Cisco-Enterprise-Architecture-Model.png)
 
--
+-The words internet and web are often used interchangeably, but they do not share the same meaning. The internet is a global network that interconnects many networks and therefore provides a worldwide communication infrastructure. The World Wide Web describes one way to provide and access information over the internet using a web browser. It is a service that relies on connections provided by the internet for its function.
+
+##Protocols
+-Protocols are a detailed set of rules that govern successful network communication
+-The rules define various situations, methods and behaviours that every communicating device should follow
+-Examples of protocols used include the voltage to use for an electrical signal, which messages are allowed in communnication, what are the building blocks of the messages etc
+-Protocols define how data is transmitted between devices in networks and how it allows the devices to communicate with each other
+-A set of documents called RFCs defines the protocols and processes of the internet
+
+[Exploring RFC Standards](Exploring-RFC-Standards.pdf)
