@@ -23,7 +23,7 @@
 
 -The words internet and web are often used interchangeably, but they do not share the same meaning. The internet is a global network that interconnects many networks and therefore provides a worldwide communication infrastructure. The World Wide Web describes one way to provide and access information over the internet using a web browser. It is a service that relies on connections provided by the internet for its function.
 
-##Protocols
+## Protocols
 -Protocols are a detailed set of rules that govern successful network communication
 -The rules define various situations, methods and behaviors that every communicating device should follow
 -Examples of protocols used include the voltage to use for an electrical signal, which messages are allowed in communication, what are the building blocks of the messages etc
