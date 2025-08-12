@@ -95,3 +95,96 @@ In the scenario, the desired destination is Bob’s computer, wherever Bob is lo
 - includes features for discovery and management of network inventory, management of software images, device configuration automation, network diagnostics, and policy configuration.
 - It provides end-to-end network visibility and uses network insights to optimize the network.
 - example of a centralized management service is Cisco Catalyst Center
+
+- In homes you can often find Wireless routers which has characteristics of a switch, a router that enables users to access other networks and the internet and a WLAN AP allowing wireless devices to connect to it.
+
+- A file server is another network device which runs software that implements standardized protocls to support file transfer from one device to another over a network 
+
+![Components of a network](Images/Components-of-a-Network.png)
+
+## Media
+- Media are the physical elements that connect network devices
+- Media carry electromagnetic signals that represent data
+- Electromagnetic signals can be guided in wires and fiver-optic cables or through wireless transmissions such as WI-FI, mobile or satellite
+- Type of media used can be based on a few factors such as budget or the environment used, example being a film crew in the desert might only have access to satellite connected (air medium)
+- Wires have connectors on each end which is a plug, the most common type of connector on a LAN is the plug that looks like an analog phone connector, it is called an RJ-45 connector
+- Devices use Network Interface Cards NIT to connect devices to a network
+- NICs on LANs are called LAN adapters which translate the data created by the device into a format that can be transmitted over the media
+- NICs on a LAN are uniquely identified by a MAC address. The MAC address is hardcoded or "burned in" by the NIC manufacturer. NICs used to interface with WANs are called WAN interface cards (WICs), and they use serial links to connect to a WAN network.
+
+## Network Services
+
+- Services in a network comprise software and processes that implement common network applications, such as email and web. These generate data and determine how data is moved through the network
+- Companies typically centralize business-critical data and applications into central locations called data centers
+- Data centers can include routers, switches, firewalls, storage systems, servers and application delivery controllers.
+- Computing resources can also be centralized off-premises in the form of a cloud
+- Clouds can be private, public or hybrid and they aggregate the computing, storage, network and application resources in central locations
+- Cloud computing resources are configurable and shared among many end users and are transparently available regardless of the user's point of entry
+- Data stored by the user is available whenever the user is connected to the cloud
+
+## Topology
+- Refers to the arrangement of network elements (devices, links).
+- Determines physical connections and logical data flows.
+- A well-designed topology optimizes data flow and overall network performance
+
+## Bitrate / Bandwidth
+- Bitrate = data rate of a link, measured in bits per second (bps).
+- Often called bandwidth or speed in device configs.
+- Represents how many bits are transmitted per second—not how fast a single bit travels.
+- Transmission speed depends on the physical medium (e.g., copper, fiber).
+- Common link speeds:
+- 1 Gbps (1 billion bits/sec)
+- 10 Gbps
+- 100 Gbps (in high-performance networks)
+
+## Availability 
+- Measures how often the network is accessible and operational.
+- High availability requires:
+- Redundant design (backup links, devices, components)
+- Fast recovery from failures
+- Goal: Minimize downtime and service disruption.
+
+## Reliability
+- Indicates how consistently the network performs as expected.
+- Focuses on failure-free operation over a defined time period.
+- Reliability ≠ Availability:
+- A network can be available but not reliable (e.g., degraded performance).
+- Reliable networks use high-quality, redundant components to boost both reliability and availability.
+
+![Availability Percentage](Images/Availability-Percentage.png)
+
+## Scalability
+- Measures how well a network can grow (users, traffic) without degrading performance.
+- A scalable network adapts to increased demand with minimal redesign.
+- Designing only for current needs can lead to costly upgrades later.
+- Key for future-proofing and long-term efficiency
+
+## Security
+- Refers to protection of both:
+- Network infrastructure (devices, links)
+- Transmitted data (confidentiality, integrity)
+- Threats evolve constantly—security must be proactive and adaptive.
+- Should be considered in every network-related decision or configuration.
+- Includes physical security, access control, encryption, firewalls, etc
+
+## Quality of Service (QoS)
+- Set of tools and mechanisms to manage network traffic.
+- Prioritizes critical applications during congestion (e.g., VoIP, video).
+- Helps ensure consistent performance for latency-sensitive services.
+- Can be configured via policies, traffic shaping, and queuing strategies
+
+## Cost
+- Covers:
+- Initial hardware/software purchases
+- Installation and setup
+- Ongoing maintenance and upgrades
+- Budget constraints often influence design choices and scalability.
+- Cost-effective design balances performance, reliability, and future growth
+
+## Virtualization
+- Emulates network services/functions in software (vs. traditional hardware).
+- Enables centralized management, automation, and provisioning.
+- Solves modern challenges like scalability, flexibility, and rapid deployment.
+- Examples: virtual switches, routers, firewalls, SDN (Software-Defined Networking)
+
+
