@@ -187,4 +187,20 @@ In the scenario, the desired destination is Bob’s computer, wherever Bob is lo
 - Solves modern challenges like scalability, flexibility, and rapid deployment.
 - Examples: virtual switches, routers, firewalls, SDN (Software-Defined Networking)
 
+## Topologies
+### 🧠 Network Topology Notes
+
+- Every network has both a physical topology and a logical topology  
+- Physical topology refers to the actual layout of devices and cabling in a network  
+- The term "node" is commonly used in topology diagrams to represent a device  
+- Two networks may share the same physical topology but differ in:  
+  - Distance between nodes  
+  - Physical interconnections  
+  - Transmission rates  
+  - Signal types  
+- Implementing a physical topology requires using media appropriate to that topology  
+- In wired networks, identifying the type of cabling is essential for describing the physical topology  
+- Diagrams often illustrate common physical topologies encountered in networking
+
+
 
