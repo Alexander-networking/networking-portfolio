@@ -188,7 +188,6 @@ In the scenario, the desired destination is Bob’s computer, wherever Bob is lo
 - Examples: virtual switches, routers, firewalls, SDN (Software-Defined Networking)
 
 ## Topologies
-### 🧠 Network Topology Notes
 
 - Every network has both a physical topology and a logical topology  
 - Physical topology refers to the actual layout of devices and cabling in a network  
@@ -202,5 +201,73 @@ In the scenario, the desired destination is Bob’s computer, wherever Bob is lo
 - In wired networks, identifying the type of cabling is essential for describing the physical topology  
 - Diagrams often illustrate common physical topologies encountered in networking
 
+![Physical Topologies](Images/Physical-Topologies.png)
 
+## Bus Topology
 
+- All workstations are connected to a single cable called the bus or backbone.
+- Each device shares the same communication line.
+- Earlier setups used coaxial cable with connectors to link devices.
+- Signals travel in both directions along the cable.
+- Terminators are placed at both ends to prevent signal bounce.
+
+## Ring Topology
+
+- Devices are cabled in succession, forming a closed loop or ring.
+- Each device connects to exactly two neighboring devices.
+- There is no direct connection to any third device.
+- Data sent from one node travels through intermediate nodes until it reaches the destination.
+- The ring structure allows data to circulate in one direction (or both, in dual-ring setups).
+
+## Star Topology
+
+- The most common physical topology used in networks
+- All devices connect to a central device via point-to-point links
+- Also referred to as the hub and spoke topology
+- Spoke devices do not have direct physical connections to each other
+- Includes both star and extended star topologies
+- In an extended star topology:
+  - One or more spoke devices are replaced by a device with its own spokes
+  - Effectively creates multiple interconnected star topologies
+
+## Mesh Topology
+
+- Devices can be connected to more than one other device
+- Multiple paths exist for data to travel between nodes
+- Redundant links improve reliability and enable self-healing
+- In a full mesh topology:
+  - Every node is connected to every other node
+- In a partial mesh topology:
+  - Some nodes are not connected to all other nodes
+
+## Logical Topologies
+
+- The logical topology is the path which data travels from one point in the network to another.
+- The logical topology requires data to also travel through the router for the two devices to communicate. hence in the example why the data does not take the shortest path theough both switches
+- Same is true for all other end devices
+- Logical topology would then be a star, where the router is a central device
+
+![Logical Topology](Images/Logical-Topologies.png)
+
+## Logical vs Physical Topology
+
+- Logical and physical topologies can be the same, but often differ
+- Physical topology refers to the actual layout of devices and cabling
+- Logical topology describes how data flows through the network
+
+- Example: Ethernet hub
+  - Devices connect in a physical star layout
+  - The hub copies signals from one port to all others
+  - Data is received by all nodes, behaving like a bus topology
+  - Therefore, the logical topology is a bus
+
+- Logical topology is influenced by:
+  - Intermediary devices (e.g. hubs, switches, routers)
+  - Network protocols used
+
+- Example: Ethernet switch
+  - Devices connect in a physical star layout
+  - Data is sent only to the intended destination
+  - Both physical and logical topologies are star
+
+- Switch-based star topology is the most common LAN implementation today
