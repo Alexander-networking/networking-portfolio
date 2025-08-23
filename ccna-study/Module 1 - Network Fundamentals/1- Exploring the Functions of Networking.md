@@ -271,3 +271,64 @@ In the scenario, the desired destination is Bob’s computer, wherever Bob is lo
   - Both physical and logical topologies are star
 
 - Switch-based star topology is the most common LAN implementation today
+
+## Interpreting a Network Diagram
+
+- Network diagrams are visual tools used to understand network design and operation
+- They serve as maps that show devices and their interconnections
+- Diagrams can represent both physical and logical aspects of a network
+- Multiple diagrams may be used depending on the level of detail required
+
+- Common types of network diagrams:
+  - Physical diagrams: show actual device placement and cabling
+  - Logical diagrams: show data flow and logical relationships
+  - Sequence diagrams: illustrate the chronological exchange of messages between devices
+
+- Diagrams typically use icons to represent devices and media
+- Additional information may be included, such as device names and models
+
+![Physical Diagram](Images/Physical-Diagram.png)
+
+## Port and Slot Naming Conventions
+
+- Format: slot#/port#
+  - Example: Te1/4 → Port 4 in slot 1
+
+- Format: slot#/sub-slot#/port#
+  - Example: G1/2/1 → Port 1 in slot 1, sub-slot 2
+
+- A slot is typically an opening in a router or switch that allows installation of a module
+- Some switches are fixed-port and do not have modular slots
+  - All ports are assigned to the default built-in slot: slot 0
+
+- Some modules include smaller divisions called sub-slots
+  - Sub-slots help organize ports on complex or multi-function modules
+
+## Interface Naming Reference
+
+- Ethernet  
+  - Abbreviation: E  
+  - Example: E0/0  
+
+- FastEthernet  
+  - Abbreviation: Fa  
+  - Example: Fa0/1  
+
+- GigabitEthernet  
+  - Abbreviation: Gi  
+  - Example: Gi1/0/1  
+
+- TenGigabitEthernet  
+  - Abbreviation: Te  
+  - Example: Te1/5  
+
+- FortyGigabitEthernet  
+  - Abbreviation: Fo  
+  - Example: Fo1/0/1  
+
+- HundredGigabitEthernet  
+  - Abbreviation: Hu  
+  - Example: Hu1/0/2  
+
+- Note:  
+  - In some cases, the first interface in a slot or sub-slot is numbered as 0 instead of 1
