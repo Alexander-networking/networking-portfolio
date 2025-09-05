@@ -413,3 +413,65 @@ In the scenario, the desired destination is Bob’s computer, wherever Bob is lo
   - End-to-end latency is critical
   - Examples: voice applications, video conferencing, live sports streaming
 
+## Communication Models and Protocols
+
+### Overview
+
+- Communication models help organize the complexity of internetworking
+- Two commonly used models:
+  - ISO OSI (Open Systems Interconnection)
+  - TCP/IP (Transmission Control Protocol / Internet Protocol)
+- Both models describe internetworking functions and define protocols
+
+### ISO OSI vs TCP/IP
+
+- TCP/IP protocols are widely implemented in modern networking
+- ISO OSI is a general reference model used for comparison and guidance across systems
+- ISO OSI is often used in education and troubleshooting due to its layered clarity
+
+### Benefits of Standards-Based Layered Models
+
+- Make complexity manageable by dividing tasks into functional layers
+- Define communication tasks to standardize development across vendors
+- Enable modular engineering for hardware/software interoperability
+- Prevent changes in one layer from affecting others
+- Support evolution and updates without rewriting entire protocols
+- Simplify teaching and learning of networking concepts
+
+- Note:  
+  - Understanding layers helps narrow down issues during troubleshooting
+
+### Evolution of Networking
+
+- Early networks focused solely on data transfer
+- Data referred to electronic information processed by computers
+- Different protocols (IP, AppleTalk, Token Ring, FDDI) required unique hardware and topologies
+- Telephone networks operated separately with distinct standards and equipment
+- Over time, IP became the dominant standard for data communication
+- Networking expanded to include voice and video, leading to converged networking
+
+### Converged Networking
+
+- Converged networks use a unified set of protocols for voice, video, and data
+- Industrial environments also adopted converged networking
+- Operational Technology (OT) managed automation and control systems
+- IT managed business applications; both operated independently
+- With industrial IoT, OT and IT now collaborate to make plant data actionable
+- Factory Networks connect automation systems with IT systems using standard networking
+- Benefits include:
+  - Real-time access to mission-critical data
+  - Enterprise-wide knowledge sharing
+  - Improved safety and operational effectiveness
+
+### Layers and Protocols
+
+- Both ISO OSI and TCP/IP models use layers to group networking tasks
+- Each layer performs specific functions and interacts with adjacent layers (vertical communication)
+- Layers at source and destination communicate directly (horizontal communication)
+
+### Protocols
+
+- Protocols are grouped by layers and form protocol suites
+- TCP/IP is an example of a protocol suite
+- A protocol defines rules for a specific type of communication
+- Successful communication requires all devices to follow the same protocol rules
