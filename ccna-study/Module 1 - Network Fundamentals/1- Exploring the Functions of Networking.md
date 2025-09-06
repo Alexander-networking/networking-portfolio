@@ -475,3 +475,83 @@ In the scenario, the desired destination is Bob’s computer, wherever Bob is lo
 - TCP/IP is an example of a protocol suite
 - A protocol defines rules for a specific type of communication
 - Successful communication requires all devices to follow the same protocol rules
+
+## ISO OSI Model and Communication Standards
+
+### Background and Purpose
+
+- ISO created the OSI model to address network interoperability challenges
+- The OSI model serves as a framework for building protocol suites
+- Goal: enable international networking without relying on proprietary systems
+- Proprietary systems are vendor-specific and often incompatible with others
+- TCP/IP was used in early network implementations and became the practical standard
+- TCP/IP replaced the OSI protocol suite in real-world deployments
+
+- Note:  
+  - ISO (International Organization for Standardization) is an independent, non-governmental body  
+  - It develops voluntary international standards to improve productivity and reduce errors
+
+### OSI Model Overview
+
+- Describes how data is transferred across a network
+- Covers both hardware and software aspects of transmission
+- Defines functions and services at each layer
+- Facilitates understanding of data flow and supports vendor interoperability
+- Used in network design, operation specs, and troubleshooting
+
+### Layer Grouping
+
+- Upper layers (5–7): focus on user interaction and data presentation
+- Lower layers (1–4): focus on data transport across the network
+
+### OSI Model: 7 Layers
+
+#### Layer 1: Physical Layer
+
+- Defines electrical, mechanical, procedural, and functional specs for physical links
+- Handles electromagnetic representation and transmission of bits
+- Specifies line encoding, voltage levels, timing, data rates, connectors, and distances
+- Implemented solely in hardware
+
+#### Layer 2: Data Link Layer
+
+- Formats data for transmission and controls access to physical media
+- Includes error detection and correction for reliable delivery
+- Manages NIC-to-NIC communication within the same subnet
+- Uses physical (MAC) addresses to identify hosts
+
+#### Layer 3: Network Layer
+
+- Provides connectivity and path selection beyond the local segment
+- Uses logical addressing to identify sender and recipient
+- Logical addresses differ from postal addresses but serve similar identification roles
+- Ensures unique identification of hosts for communication
+
+#### Layer 4: Transport Layer
+
+- Segments and reassembles data for multiple communications
+- Manages flow control and reliability mechanisms
+- Uses local addressing to distinguish between application processes
+- Supports reliable or unreliable transport depending on application needs
+
+#### Layer 5: Session Layer
+
+- Establishes, manages, and terminates sessions between hosts
+- Handles dialog control (one-way or two-way communication)
+- Manages checkpoints and recovery
+- Used in applications with remote procedure calls
+
+#### Layer 6: Presentation Layer
+
+- Ensures data is readable by the receiving application layer
+- Translates data into standard formats
+- Handles compression/decompression and encryption/decryption
+- May perform some functions at lower layers as well
+
+#### Layer 7: Application Layer
+
+- Closest layer to the user
+- Provides services to user applications (e.g. email, file transfer, terminal emulation)
+- Protocols at this layer support user-facing tasks
+- Operating systems may use this layer for remote file access or data import
+- Does not provide services to other OSI layers
