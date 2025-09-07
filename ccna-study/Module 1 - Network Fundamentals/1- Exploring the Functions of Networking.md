@@ -555,3 +555,66 @@ In the scenario, the desired destination is Bob’s computer, wherever Bob is lo
 - Protocols at this layer support user-facing tasks
 - Operating systems may use this layer for remote file access or data import
 - Does not provide services to other OSI layers
+
+# TCP/IP Model – Core Notes for CCNA
+
+## Overview
+
+- TCP/IP is the protocol suite used in real-world networking.
+- It predates the OSI model and was designed for practical implementation.
+- The model has 4 layers (sometimes shown as 5), each handling specific networking tasks.
+- Unlike OSI, TCP/IP protocols are widely adopted and standardized across devices and platforms.
+
+## TCP/IP vs OSI Layer Mapping
+
+| TCP/IP Layer        | OSI Equivalent Layers             |
+|---------------------|-----------------------------------|
+| Application         | Application, Presentation, Session |
+| Transport           | Transport                          |
+| Internet            | Network                            |
+| Network Access      | Data Link, Physical                |
+
+## Key Concepts
+
+- **Encapsulation**: Data is wrapped with headers as it moves down the layers.
+- **De-encapsulation**: Headers are stripped as data moves up the layers on the receiving side.
+- **IP addresses**: Used for global routing across networks.
+- **MAC addresses**: Used for local delivery within a LAN.
+- **ARP**: Resolves IP addresses to MAC addresses for local transmission.
+
+## Protocol Cheat Sheet
+
+### Application Layer  
+User-facing services and data formatting  
+- HTTP / HTTPS – Web browsing  
+- FTP / TFTP – File transfers  
+- SMTP / POP3 / IMAP – Email  
+- DNS – Domain name resolution  
+- DHCP – Dynamic IP assignment  
+- SNMP – Network monitoring  
+
+### Transport Layer  
+Segmentation, reliability, and flow control  
+- TCP – Reliable, ordered delivery  
+- UDP – Fast, connectionless delivery  
+
+### Internet Layer  
+Routing and logical addressing  
+- IP (IPv4 / IPv6) – Core addressing and routing  
+- ICMP – Diagnostics (e.g. ping)  
+- ARP – IP to MAC resolution  
+- RARP – MAC to IP (rarely used)  
+
+### Network Access Layer  
+Local delivery and physical transmission  
+- Ethernet – LAN protocol  
+- Wi-Fi (802.11) – Wireless LAN  
+- PPP – Point-to-point links  
+- Frame Relay / ATM – Legacy WAN protocols
+
+## Use Cases
+
+- Web browsing, email, gaming, VoIP, industrial IoT, and more
+- TCP/IP powers all modern internet and enterprise communication
+- Layered troubleshooting helps isolate issues (e.g. DNS failure = Application layer)
+
