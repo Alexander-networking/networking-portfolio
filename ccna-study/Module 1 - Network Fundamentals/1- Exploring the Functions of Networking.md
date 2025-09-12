@@ -704,3 +704,36 @@ As data moves through the stack, its name changes:
 
 - Encapsulation = sending; De-encapsulation = receiving.
 - Both TCP/IP and OSI models describe this process — terminology may vary, but the concept is universal.
+
+# OSI vs TCP/IP – CCNA Notes
+
+## Origins & Adoption
+
+- OSI and TCP/IP were developed independently around the same time.
+- OSI was created as a **standardized reference model** by ISO.
+- TCP/IP was developed by the **U.S. Department of Defense** for practical implementation.
+- TCP/IP gained rapid adoption due to the growth of the internet, while OSI protocols saw limited real-world use.
+- Despite this, the **OSI model remains widely used** for describing and referencing networking functions.
+
+## Layer Mapping
+
+| TCP/IP Layer     | OSI Layer(s)                          | Description                                                  |
+|------------------|----------------------------------------|--------------------------------------------------------------|
+| Application      | Application, Presentation, Session     | Supports user-facing applications and data formatting        |
+| Transport        | Transport                              | Enables reliable or best-effort delivery between hosts       |
+| Internet         | Network                                | Handles IP addressing and routing across networks            |
+| Link             | Data Link, Physical                    | Interfaces with hardware and transmission media              |
+
+## Device & Protocol Terminology
+
+- OSI layer numbers are commonly used to describe devices and protocols:
+  - **Layer 2 switch** → operates at OSI Data Link layer (MAC-level switching)
+  - **Layer 3 switch** → adds routing capabilities (OSI Network layer)
+  - **IP** → referred to as a **Layer 3 protocol**
+  - **TCP/UDP** → referred to as **Layer 4 protocols**
+
+## Key Takeaways
+
+- OSI model provides **clear functional boundaries**, making it ideal for documentation and troubleshooting.
+- TCP/IP model reflects **real-world protocol behavior**, especially in internet-based networking.
+- Networking professionals often use **OSI terminology** even when working with TCP/IP systems.
