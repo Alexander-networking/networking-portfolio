@@ -618,3 +618,43 @@ Local delivery and physical transmission
 - TCP/IP powers all modern internet and enterprise communication
 - Layered troubleshooting helps isolate issues (e.g. DNS failure = Application layer)
 
+# Layered Communication & Peer-to-Peer Concepts – CCNA Notes
+
+## Peer-to-Peer Communication (Horizontal)
+
+- "Peer" means equal — in networking, layers communicate with their counterpart layer on the receiving host.
+- This is called horizontal communication:
+  - Application layer on one device talks to the application layer on another.
+  - Transport layer talks to transport layer, and so on.
+- Each layer only interacts directly with the layer above and below it locally, but its output is meant for its peer on the other side.
+
+## Vertical Communication
+
+- Data moves down the stack when sending and up the stack when receiving.
+- This is called vertical communication.
+- Each layer adds or removes headers as data moves through the stack.
+
+## Logical Communication
+
+- Except for the physical layer, all layers are implemented in software.
+- Devices don’t directly connect layer-to-layer — they simulate communication through protocols.
+- This is called logical communication — it behaves like direct interaction, even though it’s not.
+
+## Application Architectures
+
+- Peer-to-peer (P2P): Tasks and workloads are equally distributed among devices (e.g. BitTorrent).
+- Client-server: Tasks are divided unequally — clients request, servers respond (e.g. web browsing).
+
+## Protocol Data Units (PDUs)
+
+As data moves through the stack, its name changes:
+
+| Layer       | PDU Name |
+|-------------|----------|
+| Application | Data     |
+| Transport   | Segment  |
+| Internet    | Packet   |
+| Link        | Frame    |
+
+- PDU = Protocol Data Unit — a generic term for any data unit at any layer.
+- Each layer wraps the data with its own header before passing it down.
