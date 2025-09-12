@@ -658,3 +658,49 @@ As data moves through the stack, its name changes:
 
 - PDU = Protocol Data Unit — a generic term for any data unit at any layer.
 - Each layer wraps the data with its own header before passing it down.
+
+# Encapsulation & De-Encapsulation – CCNA Notes
+
+## What Is Encapsulation?
+
+- Encapsulation is the process of wrapping user data with protocol-specific headers (and sometimes trailers) as it moves **down the stack**.
+- Each layer adds its own control information to help its peer layer on the receiving side interpret the data.
+- This supports **horizontal communication** between matching layers across devices.
+
+## What Is De-Encapsulation?
+
+- De-encapsulation is the reverse process — each layer **removes its header/trailer** as data moves **up the stack** on the receiving device.
+- Each layer uses the header info to perform its function before passing the data upward.
+
+## Encapsulation Process (Sending Side)
+
+| Layer       | Action                                                                 | PDU Name |
+|-------------|------------------------------------------------------------------------|----------|
+| Application | Adds application header                                                | Data     |
+| Transport   | Adds transport header (e.g. TCP/UDP)                                   | Segment  |
+| Internet    | Adds IP header                                                         | Packet   |
+| Link        | Adds frame header + trailer (e.g. MAC + FCS)                           | Frame    |
+| Physical    | Converts frame to signals for transmission                             | Bits     |
+
+- Each layer nests the data like boxes within boxes.
+- The Link layer trailer often includes error-checking info (e.g. Frame Check Sequence).
+- Encapsulation increases PDU size — this added info is called **overhead**.
+
+## De-Encapsulation Process (Receiving Side)
+
+| Layer       | Action                                                                 |
+|-------------|------------------------------------------------------------------------|
+| Link        | Checks frame integrity, removes header/trailer, passes packet upward   |
+| Internet    | Reads IP header, removes it, passes segment upward                     |
+| Transport   | Reads transport header, removes it, passes data to correct app layer   |
+| Application | Processes data and delivers it to the user application                 |
+
+- Each layer only processes its own header/trailer.
+- Devices like switches only process **Link layer** frames.
+- Routers process **Internet layer** packets and may inspect deeper (Transport layer).
+- Hosts perform both encapsulation and de-encapsulation simultaneously during communication.
+
+## Notes
+
+- Encapsulation = sending; De-encapsulation = receiving.
+- Both TCP/IP and OSI models describe this process — terminology may vary, but the concept is universal.
