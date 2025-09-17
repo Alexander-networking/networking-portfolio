@@ -661,6 +661,10 @@ As data moves through the stack, its name changes:
 
 # Encapsulation & De-Encapsulation – CCNA Notes
 
+![Encapsulation](Images/Encapsulation.png)
+
+![Deencapsulation](Images/Deencapsulation.png)
+
 ## What Is Encapsulation?
 
 - Encapsulation is the process of wrapping user data with protocol-specific headers (and sometimes trailers) as it moves **down the stack**.
@@ -707,6 +711,8 @@ As data moves through the stack, its name changes:
 
 # OSI vs TCP/IP – CCNA Notes
 
+![OSI vs TCP](Images/OSI-TCP.png)
+
 ## Origins & Adoption
 
 - OSI and TCP/IP were developed independently around the same time.
@@ -737,3 +743,133 @@ As data moves through the stack, its name changes:
 - OSI model provides **clear functional boundaries**, making it ideal for documentation and troubleshooting.
 - TCP/IP model reflects **real-world protocol behavior**, especially in internet-based networking.
 - Networking professionals often use **OSI terminology** even when working with TCP/IP systems.
+
+
+# Cisco IOS Software – Features, Functions & Access Methods
+
+## What Is Cisco IOS?
+
+- Cisco IOS (Internetwork Operating System) is the OS used on most Cisco routers, switches, and wireless access points.
+- It manages hardware resources and enables networking functions.
+- IOS may include:
+  - Basic networking protocols
+  - Advanced features like QoS, security, and call processing
+  - Management services for configuration and monitoring
+
+## Core Features of Cisco IOS
+
+- Support for basic and advanced networking protocols
+- High-speed traffic transmission
+- Security for access control and unauthorized use prevention
+- CLI and GUI access for configuration
+- Scalability for hardware/software expansion
+- Reliability for consistent network performance
+
+## IOS Versions
+
+- Devices ship with a default IOS version and feature set
+- IOS can be upgraded to unlock additional capabilities
+- IOS version depends on device type and required features
+
+## Shell Access
+
+- The shell is the interface between the user and the operating system
+- Cisco devices lack direct input/output peripherals (no keyboard/mouse/monitor)
+- Users access the shell via:
+  - **CLI** (Command Line Interface): text-based, low overhead, full control
+  - **GUI** (Graphical User Interface): more intuitive, but limited in features
+
+## CLI vs GUI
+
+| Feature            | CLI                              | GUI                              |
+|--------------------|----------------------------------|----------------------------------|
+| Interface Type     | Text-based                       | Visual                           |
+| Resource Usage     | Minimal                          | Higher                           |
+| Feature Access     | Full                             | May be limited                   |
+| Learning Curve     | Requires command knowledge       | Easier for beginners             |
+| Preferred Use Case | Production environments          | Small-scale or initial setup     |
+
+## Remote Management Options
+
+- Devices support remote access via CLI or GUI
+- Common tools: PuTTY, SecureCRT, browser-based GUIs
+- Remote access methods:
+  - **Telnet** (insecure, lab use)
+  - **SSH** (secure, production use)
+- Devices often include a **Management Interface** connected to a management subnet
+- Large networks may use centralized controllers:
+  - Cisco Catalyst Center
+  - Cisco Wireless LAN Controller
+
+# Cisco IOS CLI Access & Modes – CCNA Notes
+
+## CLI Access Methods
+
+### 1. Console Connection (Out-of-Band)
+- Direct, physical connection using a console cable
+- Requires physical presence at the device
+- Does **not** consume network bandwidth
+- Called **Out-of-Band (OOB)** access
+
+### 2. Remote Access via Network (In-Band)
+- Uses protocols like **SSH** (secure) or **Telnet** (unsecure)
+- Requires active network services on the device
+- Called **In-Band** access
+- Enables remote management from any location
+- SSH is preferred for production environments due to encryption
+
+### 3. Auxiliary Port (Legacy OOB)
+- Found on some routers
+- Used for remote CLI access via modem
+- Also considered **Out-of-Band**
+
+## EXEC Sessions
+
+- CLI access is referred to as an **EXEC session**
+- Available features depend on:
+  - IOS version
+  - Device type
+
+## CLI Overview
+
+- Text-based interface similar to MS-DOS
+- Used to configure, monitor, and manage devices
+- Commands are typed or pasted into the terminal
+- Pressing **Enter** executes the command immediately
+
+## Modal Operating System
+
+- Cisco IOS is **modal** — it has multiple command modes
+- Each mode has:
+  - A unique prompt
+  - A specific set of commands
+  - Its own command history
+- Modes follow a **hierarchical structure**:
+  - Higher-level modes lead into more specific modes
+
+## Command Modes & Prompts
+
+| Mode              | Prompt Example     | Description                                      |
+|-------------------|--------------------|--------------------------------------------------|
+| User EXEC         | `Switch>`          | Basic monitoring commands (ping, traceroute)     |
+| Privileged EXEC   | `Switch#`          | Full access to all commands (config, management) |
+| Global Config     | `Switch(config)#`  | System-wide configuration                        |
+| Interface Config  | `Switch(config-if)#`| Port-specific or protocol-specific config        |
+
+- Prompts begin with the device name
+- Special characters indicate the current mode
+- Commands are executed immediately upon pressing Enter
+- Incorrect commands in production can cause network issues
+
+## Access Levels
+
+- **User EXEC**:
+  - Limited access
+  - Used for basic diagnostics
+- **Privileged EXEC**:
+  - Full access to all commands
+  - Password-protected for security
+
+
+
+
