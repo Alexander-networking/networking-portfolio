@@ -154,6 +154,7 @@ In the scenario, the desired destination is Bob’s computer, wherever Bob is lo
 ![Availability Percentage](Images/Availability-Percentage.png)
 
 Availability = uptime / (uptime + downtime)
+
 Availability (%) = [uptime / total time] × 100
 
 
