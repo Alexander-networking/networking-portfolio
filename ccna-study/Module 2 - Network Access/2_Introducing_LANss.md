@@ -169,3 +169,308 @@ Switches support various port speeds (e.g., 10/100/1000 Mbps, 1/10/25/40/100 Gbp
 ## ASICs in Switches
 
 Switches rely on Application-Specific Integrated Circuits (ASICs) for efficient traffic handling. ASICs are optimized for packet switching and routing, unlike general-purpose CPUs which are slower at managing large memory lookups and forwarding decisions.
+
+
+# Ethernet Media and Cabling Standards
+
+## Understanding Ethernet Standard Naming
+
+Example: `1000BASE-T`
+
+- **1000**: Transmission speed of 1000 Mbps (1 Gbps)
+- **BASE**: Baseband signaling (only Ethernet signals on the medium)
+- **T**: Twisted-pair cabling
+
+Twisted-pair cabling uses two conductors twisted together to cancel electromagnetic interference (EMI).
+
+---
+
+## Ethernet Media Standards
+
+| Standard       | Media                                | Max Segment Length                     | Connector Type               |
+|----------------|---------------------------------------|----------------------------------------|------------------------------|
+| 100BASE-TX     | TIA Category 5 UTP (2-pair)           | 100 m (328 ft)                          | ISO 8877 (RJ-45)             |
+| 100BASE-FX     | 62.5/125-micron multimode fiber       | 400 m (1312.3 ft)                       | Duplex MIC, ST               |
+| 1000BASE-T     | TIA Category 5/5e UTP (4-pair)        | 100 m (328 ft)                          | ISO 8877 (RJ-45)             |
+| 1000BASE-SX    | 62.5/50-micron multimode fiber        | 275 m (62.5 µm), 550 m (50 µm)          | Optical fiber connector      |
+| 1000BASE-LX    | 9-micron single-mode fiber            | 5–10 km (1.86–6.2 miles)                | Optical fiber connector      |
+
+**Abbreviations**:
+- TIA: Telecommunications Industry Association  
+- UTP: Unshielded Twisted Pair  
+- ISO: International Organization for Standardization  
+- RJ: Registered Jack  
+
+---
+
+## Physical Media Types
+
+- **Coaxial** (legacy, no longer used)
+- **Twisted-pair copper**
+- **Fiber optics**
+
+Ethernet originally used shared coaxial cable. Today, devices connect via electrical or optical media using various connectors:
+
+### Common Optical Connectors
+- LC (Lucent Connector)
+- SC (Standard Connector)
+- MTP (Multi-fiber Termination Push-on)
+- ST (Straight Tip)
+- FC (Ferrule Connector — common in service provider gear)
+
+---
+
+## Signal Transmission
+
+### Optical Transmission
+- Transmitter converts electrical signal → optical signal
+- Fiber optic cable carries optical signal
+- Receiver converts optical signal → electrical signal
+
+**Simplified Encoding**:
+- `1` = light on  
+- `0` = light off  
+
+### Electrical Transmission
+- `1` = +10 V  
+- `0` = –10 V  
+
+Both signal types suffer from **attenuation** and **noise**, limiting segment length.
+
+---
+
+## Electrical Noise Sources
+
+- **Artificial**: Poor patch cables, electric motors, switching gear, fluorescent lamps
+- **Industrial**: Automobiles, airplanes, high-voltage lines
+- **Natural**: Lightning (solar noise), cosmic noise from stars
+
+![Characteristics](Images/Electrical-Noise.png)
+---
+
+# Copper Media — UTP Cabling
+
+Most Ethernet networks use **Unshielded Twisted-Pair (UTP)** copper cabling for short/medium distances due to low cost.
+
+![Characteristics](Images/Unshielded-Cable.png)
+
+### UTP Characteristics
+
+| Characteristic         | Value                          |
+|------------------------|--------------------------------|
+| Speed and throughput   | 10 Mbps to 40 Gbps             |
+| Cost per node          | Least expensive                |
+| Media/connector size   | Small                          |
+| Max cable length       | 100 m (30 m for 40 Gbps)       |
+
+### UTP Categories
+
+- **Cat 5**: Up to 100 Mbps  
+- **Cat 5e**: Up to 1 Gbps  
+- **Cat 6**: Up to 10 Gbps  
+- **Cat 6a**: Up to 10 Gbps  
+- **Cat 7**: Up to 10 Gbps  
+- **Cat 8**: Up to 40 Gbps  
+
+---
+
+## RJ-45 Connector and Jack
+
+![Characteristics](Images/RJ-45.png)
+
+- **RJ-45 Plug**: Male, crimped to cable end  
+- **RJ-45 Jack**: Female, found on devices, walls, patch panels  
+
+**Pin Numbering**:
+- Plug: Pins 8 (left) to 1 (right)  
+- Jack: Pins 1 (left) to 8 (right)
+
+---
+
+## Structured Cabling
+
+- Installed during building construction
+- Horizontal cabling: Wall socket → wiring closet  
+- Vertical cabling: Between wiring closets
+
+![Characteristics](Images/Structured-Cabling.png)
+
+---
+
+# Power over Ethernet (PoE)
+
+PoE delivers **data + power** over Ethernet cables to devices like:
+- Wireless APs
+- IP cameras
+- VoIP phones
+
+Uses all four pairs in Cat 5 or higher cables.
+
+---
+
+# Straight-Through vs Crossover Cables
+
+![Characteristics](Images/Straight-Vs-Crossover.png)
+
+### Straight-Through
+- Connects **unlike** devices (e.g., PC to switch)
+
+### Crossover
+- Connects **like** devices (e.g., PC to PC, switch to switch)
+
+### How to Identify
+- Hold both ends side by side
+- If pin colors match → straight-through  
+- If wires cross → crossover
+
+### Auto-MDIX
+Modern devices support **auto-MDIX**, which auto-detects cable type and adjusts internally. Either cable type can be used.
+
+![Characteristics](Images/Identify.png)
+
+# Optical Fiber — Media, Types, and Connectors
+
+![Characteristics](Images/Optical-Fiber.png)
+
+## What Is Optical Fiber?
+
+An optical fiber is a flexible, transparent strand made of highly pure glass (silica), slightly thicker than a human hair. It acts as a waveguide to transmit light between two endpoints.
+
+### Advantages
+- Supports long-distance, high-bandwidth communication
+- Less signal loss compared to metal wires
+- Immune to electromagnetic interference (EMI)
+
+### Structure
+- **Core**: Carries the light signal
+- **Cladding**: Surrounds the core and confines the light
+- **Buffer (Coating)**: Protects the fiber from scratches and moisture
+
+Typical dimensions:
+- Core diameter: ~9 µm (varies by type)
+- Cladding diameter: 125 µm (standardized)
+
+---
+
+## Fiber Types — MMF vs SMF
+
+![Characteristics](Images/Fiber-Types.png)
+
+| Characteristic           | Multimode Fiber (MMF)         | Single-Mode Fiber (SMF)             |
+|--------------------------|-------------------------------|-------------------------------------|
+| Light Source             | LED                           | Laser                               |
+| Bandwidth & Speed        | Lower                         | Higher                              |
+| Transmission Distance    | Shorter                       | Longer                              |
+| Cost                     | Less expensive                | More expensive                      |
+| Core Size                | Larger                        | Smaller                             |
+| Modes of Transmission    | Multiple paths (modes)        | Single path (approximation)         |
+
+- MMF is used for short-distance links (e.g., within buildings)
+- SMF is used for long-distance, high-speed links (e.g., between campuses)
+
+---
+
+## Fiber Connector Types
+
+![Characteristics](Images/Fiber-Connector.png)
+
+Fiber connectors terminate the ends of optical fibers. Over 70 types exist, but most organizations standardize based on equipment or fiber type.
+
+### Locking Mechanisms
+- **Threaded**: Screws into place
+- **Bayonet**: Twist-and-lock
+- **Push-pull**: Snap-in
+
+### Materials
+- Metal
+- Plastic sleeve
+
+### Common Connector Types
+
+| Connector | Typical Use                                      |
+|-----------|--------------------------------------------------|
+| LC        | Enterprise gear, SFP modules                     |
+| SC        | Enterprise gear                                  |
+| ST        | Patch panels (durability)                        |
+| FC        | Service provider patch panels                    |
+| MT-RJ     | Two-fiber connector, enterprise equipment        |
+
+Small Form Factor (SFF) connectors like LC are replacing larger connectors like SC to reduce footprint and increase port density.
+
+---
+
+## SFP and SFP+ Transceivers
+
+![Characteristics](Images/One.png)
+
+
+![Characteristics](Images/Two.png)
+
+| Transceiver Type     | Max Speed     | Supported Mediums       |
+|----------------------|---------------|--------------------------|
+| 1000BASE SFP         | 1 Gbps        | Copper / Fiber Optics    |
+| 10GBASE SFP+         | 10 Gbps       | Copper / Fiber Optics    |
+| 25GBASE SFP28        | 25 Gbps       | Copper / Fiber Optics    |
+| 40GBASE QSFP         | 40 Gbps       | Copper / Fiber Optics    |
+| 100GBASE QSFP        | 100 Gbps      | Copper / Fiber Optics    |
+| 400GBASE QSFP-DD     | 400 Gbps      | Copper / Fiber Optics    |
+
+
+![Characteristics](Images/Three.png)
+
+![Characteristics](Images/Four.png)
+
+![Characteristics](Images/Five.png)
+
+
+# Ethernet Frames — Structure and MTU
+
+## What Is an Ethernet Frame?
+
+An Ethernet frame is the container used to transmit data across a LAN. It includes:
+- **Header**: Source and destination info
+- **Payload**: The actual data
+- **Trailer**: Error-checking info
+
+---
+
+## Ethernet II Frame Format
+
+This is the most common frame type used to carry IP packets.
+
+| Field               | Length (Bytes) | Description                                                                 |
+|---------------------|----------------|-----------------------------------------------------------------------------|
+| **Preamble**         | 8              | Alternating 1s and 0s for signal synchronization                            |
+| **Destination MAC**  | 6              | MAC address of the receiving device                                         |
+| **Source MAC**       | 6              | MAC address of the sending device                                           |
+| **Type**             | 2              | Ether-Type code identifying the protocol (e.g., IP = `0x0800`, IPv6 = `0x86DD`) |
+| **Payload**          | 46–1500        | Network layer data (padded if shorter than 46 bytes)                        |
+| **FCS**              | 4              | Frame Check Sequence using CRC for error detection                          |
+
+> **Maximum Transmission Unit (MTU)** = 1500 bytes  
+> **Max frame size** = 1518 bytes (excluding preamble)
+
+---
+
+## Payload and MTU Behavior
+
+- If the payload is smaller than 46 bytes, padding is added.
+- If the payload needs to exceed 1500 bytes (e.g., for tunneling), options include:
+  - **Jumbo frames**: Frames larger than 1518 bytes
+  - **MTU reduction**: Shrinking the payload to make room for extra headers
+
+### Example — GRE Tunneling:
+- GRE adds 24 bytes of overhead (4 bytes GRE + 20 bytes IP header)
+- MTU is reduced to **1476 bytes**
+
+---
+
+## Frame Check Sequence (FCS)
+
+- The FCS field uses **Cyclic Redundancy Check (CRC)** to detect transmission errors.
+- If the CRC fails, the frame is discarded.
+
+![Characteristics](Images/MTU-One.png)
+
+![Characteristics](Images/MTU-Two.png)
+
