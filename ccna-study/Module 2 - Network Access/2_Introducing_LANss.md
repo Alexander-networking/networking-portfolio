@@ -474,3 +474,137 @@ This is the most common frame type used to carry IP packets.
 
 ![Characteristics](Images/MTU-Two.png)
 
+
+# Network Communication Types — Unicast, Broadcast, Multicast
+
+## Unicast
+
+Unicast is one-to-one communication:
+- A frame is sent from one host to one specific destination.
+- Only one sender and one receiver.
+- Most common transmission type on LANs and across the internet.
+
+---
+
+## Broadcast
+
+Broadcast is one-to-all communication:
+- A frame is sent from one address to **all** other addresses on the LAN.
+- One sender, multiple receivers.
+- Used for discovery protocols and general announcements (e.g., ARP requests).
+
+---
+
+## Multicast
+
+Multicast is one-to-many (group-based) communication:
+- A frame is sent to a **specific group** of devices.
+- Only devices that are members of the multicast group receive the data.
+- More efficient than broadcast for group communication (e.g., video streaming, conferencing).
+
+---
+
+![Characteristics](Images/LAN-Communication-Types.png)
+
+## Multicast Mechanics
+
+- Multicast uses **special IP and MAC addresses** to identify groups.
+- Receivers send **Join messages** to subscribe to a multicast group.
+- The source sends packets to the group address — only subscribed receivers accept them.
+
+---
+
+## Multicast Protocols
+
+| Protocol | Role                                                                 |
+|----------|----------------------------------------------------------------------|
+| **IGMP** | Internet Group Management Protocol — manages group membership on LAN |
+| **PIM**  | Protocol-Independent Multicast — builds routing paths across networks |
+
+- **IGMP** handles Join messages and ensures traffic reaches only group members.
+- **PIM** sets up multicast distribution trees to route packets from source to receivers.
+
+![Characteristics](Images/LAN-Communication-Types2.png)
+
+# MAC Address Formats, Structure, and Types
+
+## Display Formats
+
+MAC addresses can be represented in multiple formats:
+
+- `0000.0c43.2e08` — Cisco-style (dot-separated)
+- `00:00:0c:43:2e:08` — Colon-separated (common in Linux/Unix)
+- `00-00-0C-43-2E-08` — Dash-separated (common in Windows)
+
+![Characteristics](Images/Display-Format.png)
+
+All formats represent the same 48-bit address.
+
+---
+
+## Hexadecimal Overview
+
+- Hexadecimal (hex) is a base-16 numbering system.
+- Digits include: `0–9` and `A–F`
+- `A = 10`, `F = 15`, etc.
+- Each hex digit = 4 bits
+- MAC address = 12 hex digits = 48 bits
+- Letters can be uppercase or lowercase
+
+---
+
+## MAC Address Structure
+
+| Component                        | Bits | Description                                                                 |
+|----------------------------------|------|-----------------------------------------------------------------------------|
+| Organizationally Unique Identifier (OUI) | 24   | Identifies the NIC manufacturer (assigned by IEEE)                         |
+| Device-specific ID               | 24   | Unique to the device (assigned by the vendor)                              |
+
+### Special Bits in First Octet
+
+- **I/G Bit (Individual/Group)**  
+  - 0 = Unicast  
+  - 1 = Broadcast or Multicast
+
+- **U/L Bit (Universal/Local)**  
+  - 0 = Globally assigned  
+  - 1 = Locally modified
+
+---
+
+## MAC Address Types
+
+### Unicast MAC Address
+
+- Identifies one specific NIC
+- Used for direct device-to-device communication
+- Example: `00:00:0c:43:2e:08`
+
+![Characteristics](Images/Unicast-MAC-Address.png)
+
+### Broadcast MAC Address
+
+- Sent to all devices on the LAN
+- Format: `FF:FF:FF:FF:FF:FF`
+- Used for discovery protocols such as ARP requests
+
+![Characteristics](Images/Broadcast-MAC-Address.png)
+
+### Multicast MAC Address
+
+- Sent to a group of devices
+- Format always starts with: `01:00:5E`
+- Last 23 bits are derived from the multicast IP address
+
+![Characteristics](Images/Multicast-MAC-Address.png)
+
+---
+
+## Multicast MAC Address Example
+
+Multicast IP: `224.1.1.1`  
+- Convert last 23 bits of IP to binary  
+- Append to `01:00:5E`  
+- Resulting MAC: `01:00:5E:01:01:01` (example)
+
+Only devices that join this multicast group will listen to that MAC address.
