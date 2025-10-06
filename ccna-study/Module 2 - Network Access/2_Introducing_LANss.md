@@ -608,3 +608,217 @@ Multicast IP: `224.1.1.1`
 - Resulting MAC: `01:00:5E:01:01:01` (example)
 
 Only devices that join this multicast group will listen to that MAC address.
+
+# Duplex Communication Modes — Half vs Full
+
+## Half Duplex
+
+![Characteristics](Images/Half-Duplex.png)
+
+Half-duplex communication allows data to flow in only one direction at a time.
+
+### Characteristics:
+- Unidirectional data flow
+- Legacy connectivity (e.g., hubs)
+- May have collision issues
+
+### Collision Handling:
+- Uses **CSMA/CD** (Carrier Sense Multiple Access with Collision Detection)
+- Devices detect collisions and stop transmitting
+- Retransmission occurs after a random delay to avoid repeated collisions
+
+### Analogy:
+- Like walkie-talkies — only one person can speak at a time
+
+---
+
+## Full Duplex
+
+![Characteristics](Images/Full-Duplex.png)
+
+Full-duplex communication allows simultaneous sending and receiving of data.
+
+### Characteristics:
+- Point-to-point only
+- Attached to a dedicated switched port
+- Requires full-duplex support on both ends
+
+### Collision Avoidance:
+- Collision detection is disabled
+- No collisions occur due to separate transmit/receive circuits
+
+### Analogy:
+- Like a phone call — both parties can talk and listen at the same time
+
+### Duplex Mismatch:
+- Occurs when one device is set to full duplex and the other to half
+- Leads to performance issues and potential frame loss
+
+# Duplex Configuration — Commands, Defaults, and Verification
+
+## Duplex Command Options
+
+![Characteristics](Images/Duplex-Commands.png)
+
+Use the `duplex` command in interface configuration mode to set duplex mode:
+
+| Command             | Purpose                          |
+|---------------------|----------------------------------|
+| duplex full         | Set full-duplex mode             |
+| duplex half         | Set half-duplex mode             |
+| duplex auto         | Enable autonegotiation           |
+
+---
+
+## Speed Command Options
+
+Use the `speed` command in interface configuration mode to set interface speed:
+
+| Command             | Purpose                          |
+|---------------------|----------------------------------|
+| speed 10            | Set speed to 10 Mbps             |
+| speed 100           | Set speed to 100 Mbps            |
+| speed 1000          | Set speed to 1000 Mbps           |
+
+---
+
+## Duplex Defaults by Port Type
+
+| Port Type           | Default Duplex Mode | Notes                                                  |
+|---------------------|---------------------|--------------------------------------------------------|
+| 100BASE-FX          | full                | Cannot autonegotiate; always full-duplex at 100 Mbps  |
+| Fast Ethernet       | auto                | Supports half/full at 10 or 100 Mbps                  |
+| 10/100/1000         | auto                | Always full-duplex at 1000 Mbps                       |
+
+---
+
+## Autonegotiation Behavior
+
+- Autonegotiation enables two devices to agree on speed and duplex.
+- If autonegotiation fails:
+  - Cisco switches default to **half-duplex**
+  - Can cause **duplex mismatch** if the other device is manually set to full-duplex
+- Duplex mismatch leads to **late collisions** and degraded performance
+
+---
+
+## Best Practices
+
+- Use `duplex auto` for PC connections (NICs support autonegotiation)
+- Use static `duplex` and `speed` settings for switch-to-switch links
+- Always match duplex settings on both ends of a connection
+
+---
+
+## Duplex Verification
+
+Use the `show interfaces` command to verify duplex and speed:
+
+```bash
+show interfaces [interface]
+
+# Cisco Catalyst Switch Installation & Startup
+
+![Characteristics](Images/Switch-Ports.png)
+
+## Pre-Installation Checklist
+
+Before physically installing the switch, verify the following:
+
+- Power requirements
+- Operating environment (temperature and humidity)
+- Mounting method (rack, wall, table, or shelf)
+- Network cable connections to end devices
+
+---
+
+## Power Connection
+
+- Attach the power cable to the switch’s power socket
+- Catalyst switches may not have a power button — they start automatically when powered
+
+---
+
+## Boot Sequence
+
+Upon power-up:
+
+1. **POST (Power-On Self-Test)** begins
+   - LED indicators blink during hardware diagnostics
+2. **Cisco IOS Software** output appears on the console
+3. When POST and IOS initialization complete, the switch is ready for configuration
+
+
+# Connecting to a Cisco Console Port
+
+## Overview
+
+Cisco switches do not have built-in input/output devices (keyboard, monitor, mouse). Initial configuration is performed via a console connection from a PC.
+
+---
+
+## Console Port Types
+
+- **RJ-45 serial console port** — traditional Cisco devices
+- **USB serial console port** — newer Cisco devices
+
+> Note: Only one console port is active at a time.  
+> If a USB cable is connected, the RJ-45 port becomes inactive.  
+> When the USB cable is removed, the RJ-45 port becomes active.
+
+---
+
+## Required Equipment
+
+Choose the appropriate cable and adapter based on your PC’s available ports:
+
+| PC Port Type         | Required Cable/Adapter Combination                          |
+|----------------------|-------------------------------------------------------------|
+| DB-9                 | RJ-45-to-DB-9 console cable                                  |
+| USB Type A           | USB Type A-to-DB-9 adapter + USB Type A-to-RJ-45 console cable |
+| USB Type A           | USB Type A-to-5-pin (USB mini-Type B) console cable         |
+| USB mini-Type B      | USB mini-Type B-to-RJ-45 console cable                      |
+| USB-C                | USB-C-to-RJ-45 console cable                                 |
+
+---
+
+## Terminal Emulator Requirements
+
+Use terminal software such as HyperTerminal or Tera Term with the following settings:
+
+| Setting        | Value         |
+|----------------|---------------|
+| Speed          | 9600 bps      |
+| Data bits      | 8             |
+| Parity         | None          |
+| Stop bit       | 1             |
+| Flow control   | None          |
+
+---
+
+## Access Mode
+
+Upon successful console connection, the device boots into **user EXEC mode** by default.
+
+> Note: Console port location varies by switch model.
+
+![Characteristics](Images/Console-Cords.png)
+
+Switch Components
+A Cisco switch has four main internal memory components. These memory components are the Random-Access Memory (RAM), Non-Volatile RAM (NVRAM), Read Only Memory (ROM) and Flash Memory. NVRAM is the memory component that retains stored information even after the device is powered down. Because of this, the startup-config file is stored in the NVRAM. If there is no startup configuration, the switch enters the setup utility and loads a default configuration.
+
+The RAM is the memory component that contains the running configuration. When the device starts, the system copies the startup configuration to the RAM. RAM does not retain stored information when the device is rebooted or powered off. Changes made to the running configuration should be copied to the startup-config file in the NVRAM.
+
+The ROM memory component is a form of permanent storage in the switch. This memory component contains a microcode for basic functions to start and maintain the device. ROM is nonvolatile, so it maintains stored information even when the device is rebooted or powered off.
+
+ROM contains:
+
+The bootstrap code, which is used to bring up the device during initialization.
+
+Power on self-test (POST) microcode, which is used to test the basic functionality of the switch hardware to determine which components are present.
+
+ROM monitor includes a low-level operating system that is normally used for manufacturing, testing, troubleshooting and password recovery.
+
+The Flash memory is like a hard drive. Information stored here is maintained even if the device reboots or is powered off. Cisco IOS Software is stored in the flash memory. Backup configuration files may also be stored in the flash memory.
+
+![Characteristics](Images/Switch-Components.png)

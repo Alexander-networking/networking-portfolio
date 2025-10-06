@@ -1,3 +1,5 @@
+# Cisco IOS Command Cheat Sheet
+
 ## Mode Navigation & Access
 
 | Command                         | Purpose                                      |
@@ -18,6 +20,12 @@
 | hostname [name]                 | Change device hostname                       |
 | clock timezone [zone] [offset] | Set timezone                                 |
 | no ip domain-lookup             | Disable DNS lookup on mistyped commands      |
+| duplex full                     | Set full-duplex mode                         |
+| duplex half                     | Set half-duplex mode                         |
+| duplex auto                     | Enable autonegotiation for duplex mode       |
+| speed 10                        | Set interface speed to 10 Mbps               |
+| speed 100                       | Set interface speed to 100 Mbps              |
+| speed 1000                      | Set interface speed to 1000 Mbps             |
 
 ## Show Commands & Filtering
 
@@ -32,6 +40,9 @@
 | show running-config | begin [string]             | Start output from matching line              |
 | show running-config | section [string]           | Show full section starting with match        |
 | show running-config | exclude [string]           | Exclude lines matching expression            |
+| show interface [int] | include address           | Show MAC address of specific interface       |
+| show mac address-table                           | Display MAC address table on switch          |
+| show interfaces [interface]                      | Display duplex and speed settings            |
 
 ## Configuration Management
 
@@ -78,3 +89,10 @@
 |----------------------------------|----------------------------------------------|
 | terminal history [size]         | Set command history buffer size              |
 | terminal length [number]        | Set number of lines before CLI pauses output |
+
+## MAC Table & Traffic Commands
+
+| Command                                 | Purpose                                      |
+|----------------------------------------|----------------------------------------------|
+| clear mac address-table dynamic        | Clear dynamic MAC entries                    |
+| ping [IP address]                      | Send ICMP Echo to generate traffic           |
