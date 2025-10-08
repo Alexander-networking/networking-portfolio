@@ -714,7 +714,7 @@ Use the `speed` command in interface configuration mode to set interface speed:
 
 Use the `show interfaces` command to verify duplex and speed:
 
-```bash
+``bash
 show interfaces [interface]
 
 # Cisco Catalyst Switch Installation & Startup
@@ -822,3 +822,5 @@ ROM monitor includes a low-level operating system that is normally used for manu
 The Flash memory is like a hard drive. Information stored here is maintained even if the device reboots or is powered off. Cisco IOS Software is stored in the flash memory. Backup configuration files may also be stored in the flash memory.
 
 ![Characteristics](Images/Switch-Components.png)
+
+
