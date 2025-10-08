@@ -748,7 +748,6 @@ Upon power-up:
 2. **Cisco IOS Software** output appears on the console
 3. When POST and IOS initialization complete, the switch is ready for configuration
 
-
 # Connecting to a Cisco Console Port
 
 ## Overview
@@ -798,29 +797,63 @@ Use terminal software such as HyperTerminal or Tera Term with the following sett
 
 ## Access Mode
 
+![Characteristics](Images/Console-Cords.png)
+
 Upon successful console connection, the device boots into **user EXEC mode** by default.
 
 > Note: Console port location varies by switch model.
 
-![Characteristics](Images/Console-Cords.png)
+# Cisco Switch Components — Internal Memory Types
 
-Switch Components
-A Cisco switch has four main internal memory components. These memory components are the Random-Access Memory (RAM), Non-Volatile RAM (NVRAM), Read Only Memory (ROM) and Flash Memory. NVRAM is the memory component that retains stored information even after the device is powered down. Because of this, the startup-config file is stored in the NVRAM. If there is no startup configuration, the switch enters the setup utility and loads a default configuration.
+## Overview
 
-The RAM is the memory component that contains the running configuration. When the device starts, the system copies the startup configuration to the RAM. RAM does not retain stored information when the device is rebooted or powered off. Changes made to the running configuration should be copied to the startup-config file in the NVRAM.
+Cisco switches contain four main internal memory components:
 
-The ROM memory component is a form of permanent storage in the switch. This memory component contains a microcode for basic functions to start and maintain the device. ROM is nonvolatile, so it maintains stored information even when the device is rebooted or powered off.
+- RAM (Random-Access Memory)
+- NVRAM (Non-Volatile RAM)
+- ROM (Read-Only Memory)
+- Flash Memory
 
-ROM contains:
+---
 
-The bootstrap code, which is used to bring up the device during initialization.
+## RAM
 
-Power on self-test (POST) microcode, which is used to test the basic functionality of the switch hardware to determine which components are present.
+- Stores the **running configuration**
+- Volatile — contents are lost when the device is powered off or rebooted
+- On startup, the **startup-config** is copied from NVRAM to RAM
+- Changes made in RAM must be saved to NVRAM to persist
 
-ROM monitor includes a low-level operating system that is normally used for manufacturing, testing, troubleshooting and password recovery.
+---
 
-The Flash memory is like a hard drive. Information stored here is maintained even if the device reboots or is powered off. Cisco IOS Software is stored in the flash memory. Backup configuration files may also be stored in the flash memory.
+## NVRAM
+
+- Stores the **startup configuration**
+- Non-volatile — retains data after power loss
+- If no startup-config exists, the switch enters setup mode and loads a default configuration
+
+---
+
+## ROM
+
+- Permanent storage for low-level system functions
+- Non-volatile — retains data after power loss
+
+### ROM Contains:
+- **Bootstrap code** — initializes the device
+- **POST microcode** — performs hardware diagnostics
+- **ROM monitor** — low-level OS for manufacturing, testing, troubleshooting, and password recovery
+
+---
+
+## Flash Memory
+
+- Non-volatile storage similar to a hard drive
+- Stores **Cisco IOS Software**
+- Can also store backup configuration files
 
 ![Characteristics](Images/Switch-Components.png)
+
+
+
 
 
