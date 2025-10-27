@@ -854,6 +854,56 @@ Cisco switches contain four main internal memory components:
 ![Characteristics](Images/Switch-Components.png)
 
 
+# Cisco Switch LED Indicators
+
+## Power-Up Behavior
+
+- Some Cisco switches do not have a power button
+- Switch powers on automatically when plugged in
+- Connect console cable and launch terminal software before powering on to monitor boot process
+- Upon power-up, switch performs **POST** (Power-On Self-Test)
+
+---
+
+## LED Color Indicators
+
+| Color         | Meaning                                      |
+|---------------|----------------------------------------------|
+| Green         | Normal operation                             |
+| Blinking Green| Activity or loading                          |
+| Amber         | Fault or blocked state                       |
+| Off           | Port/system not powered                      |
+
+---
+
+![Characteristics](Images/Switch-LED-Indicators.png)
+
+## LED Functions
+
+| LED Name       | Description                                                                 |
+|----------------|------------------------------------------------------------------------------|
+| **Status**     | Green = link present; Blinking = activity; Amber = port blocked             |
+| **Duplex**     | Green = full-duplex; Off = half-duplex                                       |
+| **Speed**      | Off = 10 Mbps; Solid Green = 100 Mbps; Flash = 1 Gbps; Double Flash = >1 Gbps|
+| **Stack**      | Indicates switch position in stack                                           |
+| **PoE**        | Green = port is supplying Power over Ethernet                                |
+| **System**     | Green = operational; Blinking = loading IOS; Amber = POST failure            |
+| **Active**     | Green = active/standalone; Slow blink = stack standby                        |
+| **XPS**        | Green = ready to provide backup power                                        |
+| **S-PWR**      | Green = ring topology; Blinking = open ring topology                         |
+| **Console**    | Green = USB console active; Off = USB console disabled                       |
+| **Mode Button**| Cycles port LED meaning: Status, Speed, Duplex, Active, Stack, PoE           |
+| **Port LEDs**  | Meaning depends on current mode selected via Mode Button                     |
+
+---
+
+## System LED States
+
+| State          | Meaning                                      |
+|----------------|----------------------------------------------|
+| Off            | Switch not powered                           |
+| Green          | Switch powered and IOS loaded                |
+| Amber          | POST failed, IOS did not load                |
 
 
 

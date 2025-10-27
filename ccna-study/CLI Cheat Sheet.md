@@ -42,7 +42,9 @@
 | show running-config | exclude [string]           | Exclude lines matching expression            |
 | show interface [int] | include address           | Show MAC address of specific interface       |
 | show mac address-table                           | Display MAC address table on switch          |
-| show interfaces [interface]                      | Display duplex and speed settings            |
+| show interfaces [type slot/port]                 | Display detailed interface statistics        |
+| show version                                     | Display IOS version, uptime, platform info   |
+| show running-config                              | Display active configuration including IP    |
 
 ## Configuration Management
 
